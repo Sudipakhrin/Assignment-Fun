@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import ReactPlayer from 'react-player/youtube';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 
-export default function LiveStreamBox({data, btnText}) {
+export default function LiveStreamBox({ data, btnText }) {
+  const navigate = useNavigate();
   const [playVideo, setPlayVideo] = useState(false);
 
   const handleButtonClick = () => {
@@ -20,14 +22,17 @@ export default function LiveStreamBox({data, btnText}) {
         <div className="flex flex-col justify-center">
           <p className="text-[#00df9a] font-bold">{data.heading}</p>
           <h1 className="md:text-4xl sm:text-3xl text-2xl font-bold py-2">{data.title}</h1>
-          <p>{data.description}</p> 
+          <p>{data.description}</p>
           <p className='mt-3 font-bold'>{data.DateAndTime}</p>
-          <button 
-              className={`text-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto py-3 ${data.btnColor}`} 
-               onClick={() => window.open(data.youtubeLink, '_blank')}
-          >
-  {btnText}
-</button>
+          <Link to="/watchRewatchgame">
+            <button
+              className={`text-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto py-3 ${data.btnColor}`}
+              onClick={() => navigate("/watchRewatchgame")}
+            >
+              {btnText}
+            </button>
+          </Link>
+
 
         </div>
       </div>

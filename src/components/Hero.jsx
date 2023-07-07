@@ -1,6 +1,7 @@
 import React from "react";
 import Typed from "react-typed";
 import shareVideo from "../assets/share.mp4";
+import { Link } from "react-router-dom";
 const Hero = () => {
   return (
     <div className="text-white  w-full h-screen mx-auto bg-black">
@@ -28,12 +29,13 @@ const Hero = () => {
                 {" "}
               </div>
 
-            
-            </div>
 
-            <button className="bg-[#0096FF] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black">
-              Watch Now
-            </button>
+            </div>
+            <Link to="/local-user-login">
+              <button className="bg-[#0096FF] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black">
+                Watch Now
+              </button>
+            </Link>
           </div>
         </div>
       </div>
